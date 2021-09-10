@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/red"
+    tools:context=".Profile.KontakActivity">
+
+    <RelativeLayout
+        android:paddingStart="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <ImageView
+            android:id="@+id/back_form"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"/>
+        <TextView
+            android:id="@+id/txtBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kontak PMI"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nunito_bold"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/ic_back_login"
+        android:paddingTop="36dp"
+        android:paddingHorizontal="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="No Telp PMI"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="088807721344"
+            android:fontFamily="@font/nunito_semibold"
+            android:textColor="@color/black"
+            android:layout_marginVertical="4dp"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Instagram PMI"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="18sp"
+            android:layout_marginTop="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/igpmi"
+            android:text="example"
+            android:fontFamily="@font/nunito_semibold"
+            android:textColor="@color/black"
+            android:layout_marginVertical="4dp"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</LinearLayout>

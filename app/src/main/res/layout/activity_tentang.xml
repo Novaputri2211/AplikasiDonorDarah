@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/red"
+    tools:context=".About.TentangActivity">
+
+    <RelativeLayout
+        android:paddingStart="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <ImageView
+            android:id="@+id/back_tentang"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tentang PMI"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nunito_bold"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@drawable/ic_back_login"
+        android:weightSum="2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_weight="1.3"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/pmi"
+                android:layout_marginBottom="12dp"
+                android:layout_width="125dp"
+                android:layout_height="125dp"/>
+            <TextView
+                android:id="@+id/nama_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sejarah PMI"
+                android:gravity="center"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginTop="12dp"
+                android:textSize="26sp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_weight="0.7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:padding="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:text="@string/tentang_pmi"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/nunito"
+                    android:justificationMode="inter_word"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

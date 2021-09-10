@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AplikasiDonorDarah</string>
+    <string name="tentang_pmi">
+Palang Merah Indonesia (PMI) adalah sebuah organisasi perhimpunan nasional di Indonesia yang bergerak dalam bidang sosial kemanusiaan. PMI selalu mempunyai tujuh prinsip dasar Gerakan Internasional Palang Merah dan Bulan sabit merah yaitu kemanusiaan, kesamaan, kesukarelaan, kemandirian, kesatuan, kenetralan, dan kesemestaan. Sampai saat ini PMI telah berada di 34 PMI Daerah (tingkat provinsi) dan sekitar 408 PMI Cabang (tingkat kota/kabupaten) di seluruh Indonesia.
+Palang Merah Indonesia tidak memihak golongan politik, ras, suku ataupun agama tertentu. Palang Merah Indonesia dalam pelaksanaannya juga tidak melakukan pembedaan tetapi mengutamakan korban yang paling membutuhkan pertolongan segera untuk keselamatan jiwanya.
+Berdirinya Palang Merah di Indonesia sebenarnya sudah dimulai sejak masa sebelum Perang Dunia Ke-II. Saat itu, tepatnya pada tanggal 21 Oktober 1873 Pemerintah Kolonial Belanda mendirikan Palang Merah di Indonesia dengan nama Nederlands Rode Kruis Afdeling Indie (Nerkai), yang kemudian dibubarkan pada saat pendudukan Jepang. Perjuangan untuk mendirikan Palang Merah Indonesia sendiri diawali sekitar tahun 1932. Kegiatan tersebut dipelopori oleh Dr. RCL Senduk dan Dr Bahder Djohan. Rencana tersebut mendapat dukungan luas terutama dari kalangan terpelajar Indonesia. Mereka berusaha keras membawa rancangan tersebut ke dalam sidang Konferensi Nerkai pada tahun 1940 walaupun akhirnya ditolak mentahmentah.
+Tujuh belas hari setelah proklamasi kemerdekaan 17 Agustus 1945, yaitu pada tanggal 3 September 1945, Presiden Soekarno mengeluarkan perintah untuk membentuk suatu badan Palang Merah Nasional. Atas perintah Presiden, maka Dr. Buntaran yang saat itu menjabat sebagai Menteri Kesehatan Republik Indonesia Kabinet I, pada tanggal 5 September 1945 membentuk Panitia 5 yang terdiri dari: dr R.Mochtar (Ketua), dr. Bahder Djohan (Penulis), dan dr Djuhana; dr Marzuki; dr. Sitanala (anggota). Akhirnya Perhimpunan Palang Merah Indonesia berhasil dibentuk pada 17 September 1945 dan merintis kegiatannya melalui bantuan korban perang revolusi kemerdekaan Republik Indonesia dan pengembalian tawanan perang sekutu maupun Jepang.
+
+    </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

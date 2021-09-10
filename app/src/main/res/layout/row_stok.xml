@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/l_rowstok"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/l_goldar"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1.2">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:src="@drawable/ic_goldar"/>
+            <TextView
+                android:id="@+id/txt_goldar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A/B"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/jgd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="0.8"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:src="@drawable/ic_kantong_darah"/>
+            <TextView
+                android:id="@+id/txt_jumlah_kantong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="xx kantong"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="18sp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/red"
+        android:layout_below="@id/l_rowstok"
+        android:alpha="0.3"/>
+
+</RelativeLayout>

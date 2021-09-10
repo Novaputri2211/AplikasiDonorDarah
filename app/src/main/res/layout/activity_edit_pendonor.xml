@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/red"
+    tools:context=".Pendonor.EditPendonorActivity">
+
+    <RelativeLayout
+        android:paddingStart="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <ImageView
+            android:id="@+id/back_form_edit"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"/>
+        <TextView
+            android:id="@+id/txtBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Form Edit Pendonor Darah"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nunito_bold"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@drawable/ic_back_login"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:src="@drawable/img_form_donor"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"/>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/edit_nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:background="@drawable/ic_input_text"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="6dp"
+                    android:layout_marginVertical="6dp"/>
+
+                <TextView
+                    android:id="@+id/txtyyy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tempat Lahir"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/edit_tempat_lahir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_input_text"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="6dp"
+                    android:layout_marginVertical="6dp"/>
+
+                <TextView
+                    android:id="@+id/txtxxxx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Lahir"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/edit_tgl_lahir"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_input_text"
+                    android:text="Pilih Tanggal"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="12dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginVertical="6dp"
+                    app:drawableEndCompat="@drawable/ic_arrow_select" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Umur"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/edit_umur"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:background="@drawable/ic_input_text"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="6dp"
+                    android:layout_marginVertical="6dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jenis Kelamin"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                <RelativeLayout
+                    android:layout_marginVertical="6dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/lk"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:civ_border_color="@color/black"
+                        android:src="@drawable/ic_group_5">
+                    </de.hdodenhof.circleimageview.CircleImageView>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/pr"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_toRightOf="@id/lk"
+                        android:layout_marginStart="20dp"
+                        app:civ_border_color="@color/black"
+                        android:src="@drawable/ic_group_4">
+                    </de.hdodenhof.circleimageview.CircleImageView>
+
+                    <TextView
+                        android:id="@+id/select_jekel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Jenis Kelamin"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"/>
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Alamat"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/edit_alamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_input_text"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:paddingStart="10dp"
+                    android:editable="false"
+                    android:paddingEnd="6dp"
+                    android:layout_marginVertical="6dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No HP"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/edit_no_hp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_input_text"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:inputType="number"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="6dp"
+                    android:layout_marginVertical="6dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gol Darah"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+
+                <com.shawnlin.numberpicker.NumberPicker
+                    android:id="@+id/edit_gol_darah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_input_text"
+                    android:fontFamily="@font/nunito_semibold"
+                    app:np_dividerType="side_lines"
+                    app:np_dividerColor="@color/red"
+                    app:np_height="50dp"
+                    app:np_orientation="horizontal"
+                    app:np_selectedTextColor="@color/red"
+                    app:np_selectedTextSize="14sp"
+                    app:np_textColor="@color/black"
+                    app:np_textSize="12sp"
+                    app:np_width="180dp"
+                    app:np_wrapSelectorWheel="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Berat Badan (dalam kg)"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/edit_bb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_input_text"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="6dp"
+                    android:layout_marginVertical="6dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tekanan Darah"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/edit_tensi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_input_text"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="6dp"
+                    android:layout_marginVertical="6dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kadar HB"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                <EditText
+                    android:id="@+id/edit_hb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_input_text"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="6dp"
+                    android:layout_marginVertical="6dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal Donor"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/edit_tgl_donor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_input_text"
+                    android:text="Pilih Tanggal"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:paddingHorizontal="12dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginVertical="6dp"
+                    app:drawableEndCompat="@drawable/ic_arrow_select" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jumlah Kantong"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+                <RelativeLayout
+                    android:background="@drawable/ic_add_kantong"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="6dp"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/minus"
+                        android:text="-"
+                        android:textColor="@color/black"
+                        android:textSize="40sp"
+                        android:paddingHorizontal="12dp"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/jml_kantong_edit"
+                        android:text="0"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/plus"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="+"
+                        android:textColor="@color/black"
+                        android:paddingHorizontal="12dp"
+                        android:textSize="28sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_marginVertical="18dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:id="@+id/btn_update"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/ic_submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:id="@+id/txtsubmit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Update"
+                            android:fontFamily="@font/nunito_bold"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn_cancel"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_add_kantong"
+                        android:paddingVertical="8dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cancel"
+                            android:fontFamily="@font/nunito_bold"
+                            android:layout_centerInParent="true"
+                            android:textSize="16sp"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+</LinearLayout>
