@@ -30,6 +30,7 @@ import java.io.IOException;
 import java.util.Calendar;
 
 import dmax.dialog.SpotsDialog;
+import lib.kingja.switchbutton.SwitchMultiButton;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -51,6 +52,8 @@ public class EditPendonorActivity extends AppCompatActivity implements LocationD
     String tglLahir, tglDonor, idPendonor;
 
     String selectGoldar = "";
+    String pernyataanSehat = "YA";
+    String pernyataanPenyakit = "ADA";
 
     EasyWayLocation easyWayLocation = null;
     GetLocationDetail getLocationDetail;
@@ -90,18 +93,14 @@ public class EditPendonorActivity extends AppCompatActivity implements LocationD
 
     private void cekKantongDarah() {
         int toStokDarah = 0;
-        if (Integer.parseInt(binding.jmlKantongEdit.getText().toString()) > lastStokDarah){
-            toStokDarah = Integer.parseInt(binding.jmlKantongEdit.getText().toString()) - lastStokDarah;
-
-        }else if (Integer.parseInt(binding.jmlKantongEdit.getText().toString()) < lastStokDarah){
-            toStokDarah = Integer.parseInt(binding.jmlKantongEdit.getText().toString()) - lastStokDarah;
-        }
+        toStokDarah = Integer.parseInt(binding.jmlKantongEdit.getText().toString()) - lastStokDarah;
 
         updateStokKantongDarah(toStokDarah);
     }
     private void updateStokKantongDarah(int toStokDarah) {
         apiInterface.tambahStokDarah(
                 selectGoldar,String.valueOf(toStokDarah)
+
         ).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -201,6 +200,20 @@ public class EditPendonorActivity extends AppCompatActivity implements LocationD
             }
         });
 
+        //switch button
+        binding.switchSehat.setText("YA", "TIDAK").setOnSwitchListener(new SwitchMultiButton.OnSwitchListener() {
+            @Override
+            public void onSwitch(int position, String tabText) {
+                pernyataanSehat = tabText;
+            }
+        });
+        binding.switchPenyakit.setText("ADA", "TIDAK ADA").setOnSwitchListener(new SwitchMultiButton.OnSwitchListener() {
+            @Override
+            public void onSwitch(int position, String tabText) {
+                pernyataanPenyakit = tabText;
+            }
+        });
+
     }
     private void getDataPendonor() {
         apiInterface.getPendonorById(manager.getIdUser()).enqueue(new Callback<ResponseBody>() {
@@ -279,7 +292,9 @@ public class EditPendonorActivity extends AppCompatActivity implements LocationD
                 binding.editTensi.getText().toString(),
                 binding.editHb.getText().toString(),
                 tglDonor,
-                binding.jmlKantongEdit.getText().toString()
+                binding.jmlKantongEdit.getText().toString(),
+                pernyataanSehat,
+                pernyataanPenyakit
         ).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

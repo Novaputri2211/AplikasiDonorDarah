@@ -4,16 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.example.aplikasidonordarah.Intro.LoginActivity;
 import com.example.aplikasidonordarah.R;
+import com.example.aplikasidonordarah.databinding.ActivitySplashScreenBinding;
 
 public class SplashScreenActivity extends AppCompatActivity {
+    private ActivitySplashScreenBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
+        binding = ActivitySplashScreenBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.transition);
+        binding.splashIn.setAnimation(animation);
 
         Intent intent = new Intent(this, LoginActivity.class);
         Thread timer = new Thread(){

@@ -78,4 +78,7 @@ dependencies {
 
     //alerter
     implementation 'com.tapadoo.android:alerter:3.0.2'
+
+    //switch
+    implementation 'lib.kingja.switchbutton:switchbutton:1.1.8'
 }

@@ -19,6 +19,7 @@ import com.example.aplikasidonordarah.Intro.LoginActivity;
 import com.example.aplikasidonordarah.Jadwal.JadwalActivity;
 import com.example.aplikasidonordarah.Pendonor.FormPendonorActivity;
 import com.example.aplikasidonordarah.Penerima.ListPendonorActivity;
+import com.example.aplikasidonordarah.Penerima.PilihDarahActivity;
 import com.example.aplikasidonordarah.Profile.ProfileActivity;
 import com.example.aplikasidonordarah.SharedPreferences.PrefManager;
 import com.example.aplikasidonordarah.Stock.StokActivity;
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
         binding.penerima.setOnClickListener(view -> {
-            Intent intent = new Intent(this, ListPendonorActivity.class);
+            Intent intent = new Intent(this, PilihDarahActivity.class);
             startActivity(intent);
         });
         binding.jadwal.setOnClickListener(view -> {

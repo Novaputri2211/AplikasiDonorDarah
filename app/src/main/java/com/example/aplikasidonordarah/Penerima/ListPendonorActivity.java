@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.aplikasidonordarah.Penerima.Adapter.ListPendonorAdapter;
 import com.example.aplikasidonordarah.R;
@@ -44,12 +46,16 @@ public class ListPendonorActivity extends AppCompatActivity {
 
         binding.backList.setOnClickListener(view -> finish());
 
-        getDataListPendonor();
+        Intent intent = getIntent();
+        String goldar = intent.getStringExtra("goldar");
+        binding.title.setText("Daftar Pendonor Golongan Darah "+goldar);
+
+        getDataListPendonor(goldar);
 
     }
 
-    private void getDataListPendonor() {
-        apiInterface.getDataPendonor().enqueue(new Callback<ResponseBody>() {
+    private void getDataListPendonor(String goldar) {
+        apiInterface.getDataPendonor(goldar).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()){

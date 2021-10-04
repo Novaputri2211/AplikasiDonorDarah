@@ -84,6 +84,7 @@ public class ConfirmJemputFragment extends BottomSheetDialogFragment {
             }else {
                 kurangiKantongPendonor(id_pendonor);
                 kurangiStokDarah(goldar);
+                //history
             }
 
         });

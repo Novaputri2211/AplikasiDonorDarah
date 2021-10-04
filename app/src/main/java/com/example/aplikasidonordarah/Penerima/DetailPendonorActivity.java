@@ -54,7 +54,7 @@ public class DetailPendonorActivity extends AppCompatActivity {
         });
 
         binding.goChat.setOnClickListener(view -> {
-            String phoneNumber = "+6282268763883"; //no PMI
+            String phoneNumber = "+6289604499124"; //no PMI
 
             String message = "Halo PMI, saya membutuhkan darah dan akan menjemput pendonor dengan nama " + nama +
                     " dengan golongan darah " +  goldar +" sebanyak "+kantong+" kantong";
@@ -73,9 +73,6 @@ public class DetailPendonorActivity extends AppCompatActivity {
             
             if ( iduser1 == iduser2 ){
                 Toast.makeText(this, "Tidak bisa mengambil darah sendiri", Toast.LENGTH_SHORT).show();
-            }else
-                if (jmk <= 0){
-                Toast.makeText(this, "Darah tidak bisa dijemput kantong darah kosong", Toast.LENGTH_SHORT).show();
             }else {
                 //kirim id pendonor, goldar
                 Bundle bundle = new Bundle();

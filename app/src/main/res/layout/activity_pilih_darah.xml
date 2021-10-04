@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/red"
+    tools:context=".Penerima.PilihDarahActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <ImageView
+            android:id="@+id/back_pilih"
+            android:src="@drawable/ic_back"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="List Golongan Darah Pendonor"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="21sp"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@drawable/ic_back_login"
+        android:weightSum="2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_weight="1.4"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:src="@drawable/ic_gmbr_list"
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_weight="0.7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:padding="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/selectA"
+                    android:layout_marginVertical="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ic_1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_goldar"/>
+                    <TextView
+                        android:id="@+id/a"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Golongan Darah A"
+                        android:layout_toEndOf="@id/ic_1"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/red"
+                        android:layout_below="@id/a"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="12dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/selectAB"
+                    android:layout_marginVertical="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ic_2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_goldar"/>
+                    <TextView
+                        android:id="@+id/b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Golongan Darah AB"
+                        android:layout_toEndOf="@id/ic_2"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/red"
+                        android:layout_below="@id/b"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="12dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/selectB"
+                    android:layout_marginVertical="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ic_3"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_goldar"/>
+                    <TextView
+                        android:id="@+id/c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Golongan Darah B"
+                        android:layout_toEndOf="@id/ic_3"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/red"
+                        android:layout_below="@id/c"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="12dp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/selectO"
+                    android:layout_marginVertical="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/ic_4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="18dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_goldar"/>
+                    <TextView
+                        android:id="@+id/d"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Golongan Darah O"
+                        android:layout_toEndOf="@id/ic_4"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/red"
+                        android:layout_below="@id/d"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="12dp"/>
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

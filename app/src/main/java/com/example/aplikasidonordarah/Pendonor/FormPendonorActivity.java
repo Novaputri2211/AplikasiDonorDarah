@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.util.Calendar;
 
 import dmax.dialog.SpotsDialog;
+import lib.kingja.switchbutton.SwitchMultiButton;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,6 +53,8 @@ public class FormPendonorActivity extends AppCompatActivity implements LocationD
     String tglLahir, tglDonor, iduser;
 
     String selectGoldar = "";
+    String pernyataanSehat = "YA";
+    String pernyataanPenyakit = "ADA";
 
     EasyWayLocation easyWayLocation = null;
     GetLocationDetail getLocationDetail;
@@ -136,7 +139,9 @@ public class FormPendonorActivity extends AppCompatActivity implements LocationD
                 binding.inputTensi.getText().toString(),
                 binding.inputHb.getText().toString(),
                 tglDonor,
-                binding.jmlKantong.getText().toString()
+                binding.jmlKantong.getText().toString(),
+                pernyataanSehat,
+                pernyataanPenyakit
         ).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -242,6 +247,20 @@ public class FormPendonorActivity extends AppCompatActivity implements LocationD
             public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
                 int gd = binding.inputGolDarah.getValue();
                 selectGoldar = dataGoldar[gd];
+            }
+        });
+
+        //switch button
+        binding.switchSehat.setText("YA", "TIDAK").setOnSwitchListener(new SwitchMultiButton.OnSwitchListener() {
+            @Override
+            public void onSwitch(int position, String tabText) {
+                pernyataanSehat = tabText;
+            }
+        });
+        binding.switchPenyakit.setText("ADA", "TIDAK ADA").setOnSwitchListener(new SwitchMultiButton.OnSwitchListener() {
+            @Override
+            public void onSwitch(int position, String tabText) {
+                pernyataanPenyakit = tabText;
             }
         });
 

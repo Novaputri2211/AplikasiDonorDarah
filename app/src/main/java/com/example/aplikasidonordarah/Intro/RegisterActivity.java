@@ -2,12 +2,12 @@ package com.example.aplikasidonordarah.Intro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.aplikasidonordarah.Intro.LoginActivity;
 import com.example.aplikasidonordarah.UtilsApi.ApiInterface;
 import com.example.aplikasidonordarah.UtilsApi.UtilsApi;
 import com.example.aplikasidonordarah.databinding.ActivityRegisterBinding;
@@ -17,6 +17,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+import dmax.dialog.SpotsDialog;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,6 +27,8 @@ public class RegisterActivity extends AppCompatActivity {
     private ActivityRegisterBinding binding;
     private Context context;
     ApiInterface apiInterface;
+
+    AlertDialog dialog;
 
     private String gender = "";
 
@@ -37,6 +40,8 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         context = this;
         apiInterface = UtilsApi.getApiService();
+
+        dialog = new SpotsDialog.Builder().setCancelable(false).setContext(context).setMessage("Please Wait").build();
 
         selectGender();
 
@@ -58,6 +63,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void sendDataRegister() {
+        dialog.show();
         apiInterface.register(
                 binding.inputNama.getText().toString(),
                 binding.inputEmail.getText().toString(),
@@ -68,6 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()){
+                    dialog.dismiss();
                     try {
                         JSONObject object = new JSONObject(response.body().string());
                         if (object.getString("status").equalsIgnoreCase("200")){
@@ -91,6 +98,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
+                dialog.dismiss();
                 Toast.makeText(context, ""+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -107,5 +115,11 @@ public class RegisterActivity extends AppCompatActivity {
             binding.lk.setBorderWidth(0);
             binding.pr.setBorderWidth(3);
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        dialog.dismiss();
     }
 }

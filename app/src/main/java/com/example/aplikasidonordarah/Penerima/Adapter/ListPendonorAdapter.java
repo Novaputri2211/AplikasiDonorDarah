@@ -39,7 +39,6 @@ public class ListPendonorAdapter extends RecyclerView.Adapter<ListPendonorAdapte
 
         holder.binding.no.setText((position+1)+"");
         holder.binding.txtNamaPendonor.setText(data.getNama());
-        holder.binding.txtGoldarlist.setText(data.getGol_darah());
 
         holder.binding.selectPendonor.setOnClickListener(view -> {
             Intent intent = new Intent(context, DetailPendonorActivity.class);

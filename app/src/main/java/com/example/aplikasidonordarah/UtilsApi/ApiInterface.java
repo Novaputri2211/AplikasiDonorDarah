@@ -6,6 +6,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface ApiInterface {
     @FormUrlEncoded
@@ -47,7 +48,9 @@ public interface ApiInterface {
                                      @Field("tensi") String tensi,
                                      @Field("kadar_hb") String kadar_hb,
                                      @Field("tanggal_donor") String tanggal_donor,
-                                     @Field("jlh_kantong") String jlh_kantong);
+                                     @Field("jlh_kantong") String jlh_kantong,
+                                     @Field("ket_sehat") String ket_sehat,
+                                     @Field("ket_penyakit") String ket_penyakit);
 
     @FormUrlEncoded
     @POST("donor/get_pendonor.php")
@@ -70,7 +73,9 @@ public interface ApiInterface {
                                          @Field("tensi") String tensi,
                                          @Field("kadar_hb") String kadar_hb,
                                          @Field("tanggal_donor") String tanggal_donor,
-                                         @Field("jlh_kantong") String jlh_kantong
+                                         @Field("jlh_kantong") String jlh_kantong,
+                                         @Field("ket_sehat") String ket_sehat,
+                                         @Field("ket_penyakit") String ket_penyakit
     );
     
     @FormUrlEncoded
@@ -79,7 +84,7 @@ public interface ApiInterface {
                                       @Field("jlh_kantong_darah") String kantong);
 
     @GET("penerima/list_pendonor.php")
-    Call<ResponseBody>getDataPendonor();
+    Call<ResponseBody>getDataPendonor(@Query("goldar") String goldar);
 
     @FormUrlEncoded
     @POST("stok/kurang_stok_darah.php")

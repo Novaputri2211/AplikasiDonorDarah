@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiDonorDarah">
-        <activity android:name=".Pendonor.NotifikasiUpdatePendonorActivity"></activity>
+        <activity android:name=".Penerima.PilihDarahActivity"></activity>
+        <activity android:name=".Pendonor.NotifikasiUpdatePendonorActivity" />
         <activity android:name=".Pendonor.EditPendonorActivity" />
         <activity android:name=".Profile.KontakActivity" />
         <activity android:name=".Penerima.DetailPendonorActivity" />
