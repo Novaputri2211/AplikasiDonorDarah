@@ -24,6 +24,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import dmax.dialog.SpotsDialog;
 import okhttp3.ResponseBody;
@@ -39,6 +41,7 @@ public class ConfirmJemputFragment extends BottomSheetDialogFragment {
     private FragmentConfirmJemputBinding binding;
     Context context;
     ApiInterface apiInterface;
+    PrefManager manager;
 
     String id_pendonor, goldar, kantong_user;
 
@@ -56,6 +59,7 @@ public class ConfirmJemputFragment extends BottomSheetDialogFragment {
         binding = FragmentConfirmJemputBinding.inflate(inflater,container,false);
         context = getContext();
         apiInterface = UtilsApi.getApiService();
+        manager = new PrefManager(context);
 
         alertDialog = new SpotsDialog.Builder().setContext(context).setCancelable(false).build();
 
@@ -84,12 +88,46 @@ public class ConfirmJemputFragment extends BottomSheetDialogFragment {
             }else {
                 kurangiKantongPendonor(id_pendonor);
                 kurangiStokDarah(goldar);
-                //history
+                
+                addtoHistory(id_pendonor);
             }
 
         });
 
         return binding.getRoot();
+    }
+
+    private void addtoHistory(String id_pendonor) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String currentDate = sdf.format(new Date());
+
+        apiInterface.addHistory(manager.getIdUser(),
+                id_pendonor,
+                currentDate,
+                binding.jmlKantong.getText().toString()).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()){
+                    try {
+                        JSONObject object = new JSONObject(response.body().string());
+                        if (object.getString("status").equalsIgnoreCase("200")){
+
+                        }else {
+                            Toast.makeText(context, object.getString("message")+"", Toast.LENGTH_SHORT).show();
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(context, t.getLocalizedMessage()+"", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void kurangiKantongPendonor(String id_pendonor) {

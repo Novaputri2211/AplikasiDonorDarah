@@ -99,5 +99,13 @@ public interface ApiInterface {
     @GET("stok/tampil_stock_darah.php")
     Call<ResponseBody>getStockDarah();
 
+    @FormUrlEncoded
+    @POST("penerima/add_history_pengambilan.php")
+    Call<ResponseBody>addHistory(@Field("id_user") String id_user,
+                                 @Field("id_pendonor") String id_pendonor,
+                                 @Field("tgl_ambil") String tgl_ambil,
+                                 @Field("kantong_diambil") String kantong_diambil
+    );
+
 
 }

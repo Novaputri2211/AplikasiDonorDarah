@@ -54,6 +54,8 @@ public class EditPendonorActivity extends AppCompatActivity implements LocationD
     String selectGoldar = "";
     String pernyataanSehat = "YA";
     String pernyataanPenyakit = "ADA";
+//    String lastSehat = "";
+//    String lastPenyakit = "";
 
     EasyWayLocation easyWayLocation = null;
     GetLocationDetail getLocationDetail;
@@ -86,7 +88,6 @@ public class EditPendonorActivity extends AppCompatActivity implements LocationD
             cekKantongDarah();
         });
 
-        setDataUpdate();
         getDataPendonor();
 
     }
@@ -127,7 +128,7 @@ public class EditPendonorActivity extends AppCompatActivity implements LocationD
         });
     }
 
-    private void setDataUpdate() {
+    private void setDataUpdate(String lastSehat, String lastPenyakit) {
         //datepicker lahir
         Calendar calendar = Calendar.getInstance();
         th = calendar.get(Calendar.YEAR);
@@ -207,12 +208,20 @@ public class EditPendonorActivity extends AppCompatActivity implements LocationD
                 pernyataanSehat = tabText;
             }
         });
+        if (lastSehat.equalsIgnoreCase("TIDAK")){
+            binding.switchSehat.setSelectedTab(1);
+        }
+
         binding.switchPenyakit.setText("ADA", "TIDAK ADA").setOnSwitchListener(new SwitchMultiButton.OnSwitchListener() {
             @Override
             public void onSwitch(int position, String tabText) {
                 pernyataanPenyakit = tabText;
             }
         });
+        if (lastPenyakit.equalsIgnoreCase("TIDAK ADA")){
+            binding.switchPenyakit.setSelectedTab(1);
+        }
+
 
     }
     private void getDataPendonor() {
@@ -245,6 +254,8 @@ public class EditPendonorActivity extends AppCompatActivity implements LocationD
                             String formattedTglDonor = donorDate.substring(8,10) +"-"+ donorDate.substring(5,7) +"-"+ donorDate.substring(0,4);
 
                             lastStokDarah = Integer.parseInt(data.getString("jlh_kantong"));
+                            String lastSehat = data.getString("ket_sehat");
+                            String lastPenyakit = data.getString("ket_penyakit");
 
                             idPendonor = data.getString("id_pendonor");
                             binding.editNama.setText(data.getString("nama_pendonor"));
@@ -258,6 +269,8 @@ public class EditPendonorActivity extends AppCompatActivity implements LocationD
                             binding.editHb.setText(data.getString("hb"));
                             binding.editTglDonor.setText(formattedTglDonor);
                             binding.jmlKantongEdit.setText(data.getString("jlh_kantong"));
+
+                            setDataUpdate(lastSehat,lastPenyakit);
                         }else {
                             Toast.makeText(context, ""+object.getString("message"), Toast.LENGTH_SHORT).show();
                         }
